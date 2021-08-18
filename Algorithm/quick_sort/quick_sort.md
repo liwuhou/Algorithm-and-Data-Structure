@@ -31,3 +31,5 @@ def qsort(arr):
     return qsort([x for x in arr[1:] if x < min]) + [min] + qsort([x for x in arr[1:] if x >= min])
 ```
 
+通过选取基准值 `min`，将数组分为两块无序的子数组：小于基准值和大于等于基准值的元素数组，然后对这两个数组递归使用排序就o了。
+最后只需拼接一下各个数组即可。
