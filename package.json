@@ -1,0 +1,25 @@
+{
+  "name": "algorithm-and-data-structure",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hugewilliam/Algorithm-and-Data-Structure.git"
+  },
+  "keywords": [
+    "algorithm"
+  ],
+  "author": "hugewilliam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hugewilliam/Algorithm-and-Data-Structure/issues"
+  },
+  "homepage": "https://github.com/hugewilliam/Algorithm-and-Data-Structure#readme",
+  "dependencies": {
+    "typescript": "^4.3.5"
+  }
+}
