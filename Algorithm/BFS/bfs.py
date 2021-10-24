@@ -11,6 +11,7 @@ graph['bob'] = []
 graph['thom'] = []
 graph['jonny'] = []
 
+# 用以模拟找目标节点的方法
 def person_is_seller(name):
   return name[-1] == 'm'
 
