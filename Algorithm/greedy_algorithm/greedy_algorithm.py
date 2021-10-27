@@ -31,3 +31,24 @@ final_stations = set()
 '''
 
 # 计算答案
+
+# 还未覆盖的州，遍历完
+while states_needed:
+  # 暂存最佳的站点
+  best_station = None
+  # 站点所广播的州
+  states_covered = set()
+  # 遍历广播站列表
+  for station, states in stations.items():
+    # 取广播站与还未覆盖的州的交集
+    covered = states_needed & states
+    # 筛出最大的集合
+    if len(covered) > len(states_covered):
+      best_station = station
+      states_covered = covered
+  # 追加到站点集合
+  final_stations.add(best_station)
+  # 取剩余未覆盖的州与广播中包含最大站点的差集
+  states_needed -= states_covered
+
+print(final_stations)
