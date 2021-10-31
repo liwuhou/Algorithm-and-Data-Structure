@@ -1,5 +1,5 @@
 
-interface QueueNode<T> {
+export interface QueueNode<T> {
   front: number
   rear: number
   data: {
@@ -7,7 +7,7 @@ interface QueueNode<T> {
   }
 }
 
-class CircularQueue<T> {
+export default class CircularQueue<T> {
   /** 队列长度 */
   maxSize: number
   /** 队列数据 */
@@ -55,11 +55,13 @@ class CircularQueue<T> {
   }
 }
 
-// test
-const q = new CircularQueue<number>(2)
-
-q.enqueue(0)
-// q.enqueue(1) // overflow
-const a = q.dequeue()
-console.log(a)
-// q.dequeue() // underflow
+{
+  // test
+  const q = new CircularQueue<number>(2)
+  console.log(q)
+  q.enqueue(0)
+  // q.enqueue(1) // overflow
+  const a = q.dequeue()
+  console.log(a)
+  // q.dequeue() // underflow
+}
