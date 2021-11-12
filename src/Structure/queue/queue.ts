@@ -1,4 +1,3 @@
-
 export interface IQueue<T> {
   enqueue: (value: T) => void
   dequeue: () => T | null
@@ -16,7 +15,7 @@ export default class Queue<T> implements IQueue<T> {
   get isEmpty() {
     return this.queue.length === 0
   }
-  
+
   enqueue(value: T) {
     this.queue.push(value)
   }
@@ -30,21 +29,4 @@ export default class Queue<T> implements IQueue<T> {
   clear(): void {
     this.queue = []
   }
-}
-
-{
-  // test
-  const queue = new Queue<number>()
-
-  queue.enqueue(1)
-  queue.enqueue(2)
-  console.log(queue)
-  console.log(queue.dequeue())
-  console.log(queue.dequeue())
-  console.log(queue.dequeue())
-  queue.enqueue(3)
-  console.log(queue)
-  queue.clear()
-  console.log(queue)
-
 }

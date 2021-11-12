@@ -2,10 +2,11 @@
   "name": "algorithm-and-data-structure",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "jest ./src",
-    "leetcode": "jest ./src/Leetcode"
+    "leetcode": "jest ./src/Leetcode",
+    "structure": "jest ./src/Structure"
   },
   "repository": {
     "type": "git",
