@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest ./src",
     "leetcode": "jest ./src/Leetcode",
-    "structure": "jest ./src/Structure"
+    "structure": "jest ./src/Structure",
+    "algorithm": "jest ./src/Algorithm"
   },
   "repository": {
     "type": "git",
