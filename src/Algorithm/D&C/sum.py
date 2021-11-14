@@ -9,9 +9,10 @@ def sum(arr):
     return 0
   if len(arr) == 1:
     return arr[0]
-  
+
   # 缩小问题的规模
   return arr[0] + sum(arr[1:])
 
+# test
 test_arr = [1, 2, 3, 4]
 print(sum(test_arr))
