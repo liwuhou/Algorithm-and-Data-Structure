@@ -4,8 +4,7 @@
  */
 type ReverString = (s: string[]) => string[]
 
-export const reverseString: ReverString = function (s) {
-  // return s.reverse()
+export const reverseString: ReverString = (s) => {
   let i = 0
   let j = s.length - 1
   while (i <= j) {

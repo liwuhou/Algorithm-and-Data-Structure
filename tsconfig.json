@@ -3,7 +3,5 @@
     "target": "es2017",
     "lib": ["ES2015", "DOM"]
   },
-  // "baseUrl": ".",
-  "include": ["./**/*.d.ts", "./**/*.ts", "./**/*.tsx"],
-  "moduleResolution": "node"
+  "baseUrl": "."
 }
