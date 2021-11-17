@@ -1,8 +1,8 @@
 export interface IQueue<T> {
+  isEmpty: boolean
   enqueue: (value: T) => void
   dequeue: () => T | null
   clear: () => void
-  isEmpty: boolean
 }
 
 export default class Queue<T> implements IQueue<T> {
@@ -19,6 +19,7 @@ export default class Queue<T> implements IQueue<T> {
   enqueue(value: T) {
     this.queue.push(value)
   }
+
   dequeue(): T | null {
     if (this.queue.length > 0) {
       return this.queue.shift()
@@ -26,6 +27,7 @@ export default class Queue<T> implements IQueue<T> {
       return null
     }
   }
+
   clear(): void {
     this.queue = []
   }
