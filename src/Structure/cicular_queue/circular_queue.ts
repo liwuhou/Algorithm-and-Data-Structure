@@ -6,6 +6,12 @@ export interface QueueNode<T> {
   }
 }
 
+export const CircularQueueTypeError = new Error(
+  "CircularQueue's max size must be a number type data",
+)
+export const OverflowError = new Error('CircularQueue overflow')
+export const UnderflowError = new Error('CircularQueue underflow')
+
 export default class CircularQueue<T> {
   /** 队列长度 */
   maxSize: number
@@ -17,8 +23,7 @@ export default class CircularQueue<T> {
   }
 
   constructor(maxSize: number) {
-    if (typeof maxSize !== 'number')
-      throw new Error("CircularQueue's max size must be a number type data")
+    if (typeof maxSize !== 'number') throw CircularQueueTypeError
     this.maxSize = maxSize
   }
 
@@ -29,7 +34,7 @@ export default class CircularQueue<T> {
   enqueue(data: T): boolean | never {
     if ((this.queue.rear + 1) % this.maxSize === this.queue.front) {
       /** 上溢 */
-      throw new Error('CircularQueue overflow')
+      throw OverflowError
     }
     this.queue.data[String(this.queue.rear)] = data
     this.queue.rear = ++this.queue.rear % this.maxSize
@@ -39,7 +44,7 @@ export default class CircularQueue<T> {
   dequeue(): T | never {
     if (this.queue.rear === this.queue.front) {
       /** 下溢 */
-      throw new Error('CircularQueue underflow')
+      throw UnderflowError
     }
     const data = this.getQueue(this.queue.front)
     this.queue.front = ++this.queue.front % this.maxSize
@@ -54,14 +59,3 @@ export default class CircularQueue<T> {
     this.queue.front = this.queue.rear = 0
   }
 }
-
-// {
-//   // test
-//   const q = new CircularQueue<number>(2)
-//   console.log(q)
-//   q.enqueue(0)
-//   // q.enqueue(1) // overflow
-//   const a = q.dequeue()
-//   console.log(a)
-//   // q.dequeue() // underflow
-// }
