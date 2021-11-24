@@ -37,7 +37,7 @@ export default class CircularQueue<T> {
       throw OverflowError
     }
     this.queue.data[String(this.queue.rear)] = data
-    this.queue.rear = ++this.queue.rear % this.maxSize
+    this.queue.rear = (this.queue.rear + 1) % this.maxSize
     return true
   }
 
@@ -47,15 +47,18 @@ export default class CircularQueue<T> {
       throw UnderflowError
     }
     const data = this.getQueue(this.queue.front)
-    this.queue.front = ++this.queue.front % this.maxSize
+    delete this.queue.data[this.queue.front]
+    this.queue.front++
+
     return data
   }
 
   clear(): void {
-    while (this.queue.front !== this.queue.rear) {
-      delete this.queue.data[String(this.queue.front)]
-      this.queue.front = ++this.queue.front % this.maxSize
-    }
+    // while (this.queue.front !== this.queue.rear) {
+    //   delete this.queue.data[String(this.queue.front)]
+    //   this.queue.front = ++this.queue.front % this.maxSize
+    // }
+    this.queue.data = {}
     this.queue.front = this.queue.rear = 0
   }
 }

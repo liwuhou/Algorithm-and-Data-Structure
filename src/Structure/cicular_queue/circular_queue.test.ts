@@ -16,26 +16,26 @@ test('make a circular queue that has 2 max size', () => {
 })
 
 test('enqueue a number in circular queue', () => {
-  q.enqueue(0)
-  expect(q).toEqual({
-    queue: { front: 0, rear: 1, data: { 0: 0 } },
-    maxSize: 2,
-  })
+  expect(q.enqueue(0)).toBe(true)
 })
 
 test('test overflow case', () => {
-  q.enqueue(1)
-  const t = () => q.enqueue(2)
+  const t = () => q.enqueue(1)
   expect(t).toThrow(OverflowError)
 })
 
 test('dequeue a number in circular queue', () => {
-  expect(q.dequeue()).toBe(1)
+  expect(q.dequeue()).toBe(0)
+})
+
+test('test another overflow case', () => {
+  q.enqueue(2)
+  const t = () => q.enqueue(3)
+  expect(t).toThrow(OverflowError)
 })
 
 test('test clear the queue', () => {
   q.clear()
-  console.log(q.queue)
   expect(q.queue).toEqual({
     front: 0,
     rear: 0,
@@ -47,5 +47,3 @@ test('test underflow case', () => {
   const t = () => q.dequeue()
   expect(t).toThrow(UnderflowError)
 })
-
-console.log('circular queue done')
