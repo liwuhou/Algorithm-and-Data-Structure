@@ -70,14 +70,16 @@ export default class StaticArray<T> implements IStaticArray<T> {
   }
 
   insert(index: number, item: T): void | never {
-    if (index > this.capacity - 1 || index < 0) throw InvalidIndex
+    if (index > this.length - 1 || index < 0) throw InvalidIndex
     if (this.checkMaxSize()) throw OverflowError
 
-    let cur = this.length
+    let cur = this.length - 1
     while (cur >= index) {
       this.data[cur + 1] = this.data[cur]
+      cur--
     }
     this.data[index] = item
+    this.length++
   }
 
   remove(item: T): boolean {
@@ -93,11 +95,11 @@ export default class StaticArray<T> implements IStaticArray<T> {
 
     if (flag) {
       delete this.data[cur]
-      while (cur < this.length - 1) {
+      while (cur < this.length) {
         this.data[cur] = this.data[cur + 1]
         cur++
       }
-      delete this.data[this.length - 1]
+      delete this.data[--this.length]
     }
 
     return flag

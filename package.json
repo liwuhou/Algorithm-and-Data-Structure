@@ -6,7 +6,8 @@
     "test": "jest ./src",
     "leetcode": "jest ./src/Leetcode",
     "structure": "jest ./src/Structure",
-    "algorithm": "jest ./src/Algorithm"
+    "algorithm": "jest ./src/Algorithm",
+    "preinstall": "npx pm-keeper yarn"
   },
   "repository": {
     "type": "git",
