@@ -27,4 +27,8 @@ export default class Stack<T> implements IStack<T> {
   public clear() {
     this.list.length = 0
   }
+
+  public peek() {
+    return this.list[this.list.length - 1]
+  }
 }

@@ -16,6 +16,10 @@ test('push a number 2', () => {
   expect(stack).toEqual({ list: [1, 2] })
 })
 
+test('test peek', () => {
+  expect(stack.peek()).toBe(2)
+})
+
 test('pop a number what is 2', () => {
   expect(stack.pop()).toBe(2)
 })
