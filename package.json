@@ -4,9 +4,9 @@
   "description": "",
   "scripts": {
     "test": "jest",
-    "leetcode": "jest ./src/Leetcode",
     "structure": "jest ./src/Structure",
     "algorithm": "jest ./src/Algorithm",
+    "practices": "jest ./src/Practices",
     "preinstall": "npx pm-keeper pnpm"
   },
   "repository": {
