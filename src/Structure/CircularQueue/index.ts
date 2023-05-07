@@ -12,7 +12,7 @@ export const CircularQueueTypeError = new Error(
 export const OverflowError = new Error('CircularQueue overflow')
 export const UnderflowError = new Error('CircularQueue underflow')
 
-export default class CircularQueue<T> {
+export class CircularQueue<T> {
   /** 队列长度 */
   maxSize: number
   /** 队列数据 */

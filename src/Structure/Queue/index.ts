@@ -5,7 +5,7 @@ export interface IQueue<T> {
   clear: () => void
 }
 
-export default class Queue<T> implements IQueue<T> {
+export class Queue<T> implements IQueue<T> {
   private queue: T[]
 
   constructor() {

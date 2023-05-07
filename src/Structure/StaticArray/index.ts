@@ -25,7 +25,7 @@ abstract class IStaticArray<T> {
   constructor(capacity: number) {}
 }
 
-export default class StaticArray<T> implements IStaticArray<T> {
+export class StaticArray<T> implements IStaticArray<T> {
   public length: number
   private readonly capacity: number
   public data: { [key in string]: T }

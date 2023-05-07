@@ -5,7 +5,7 @@ export interface IStack<T = any> {
   clear: () => void
 }
 
-export default class Stack<T> implements IStack<T> {
+export class Stack<T> implements IStack<T> {
   private list: T[]
 
   constructor() {

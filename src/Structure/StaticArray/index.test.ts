@@ -1,8 +1,10 @@
-import StaticArray, {
+import {
+  StaticArray,
   OverflowError,
   UnderflowError,
   InvalidIndex,
-} from './static_array'
+} from './index'
+import { generateRandom } from '../../utils'
 
 const arr = new StaticArray<number>(100)
 const test_arr = Array.from({ length: 100 }, (_, idx) => idx)
@@ -33,6 +35,11 @@ test('push 100 items in arr', () => {
   )
 })
 
+test('get a item in the arr', () => {
+  const item = arr.get(generateRandom(0, 99))
+  expect(item).toBe(item)
+})
+
 test('test iterator method', () => {
   let flag = true
 
@@ -48,6 +55,8 @@ test('test iterator method', () => {
 test('test overflow err', () => {
   const t = () => arr.push(100)
   expect(t).toThrow(OverflowError)
+  const r = () => arr.insert(0, 1)
+  expect(r).toThrow(OverflowError)
 })
 
 test('array pop all items', () => {

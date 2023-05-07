@@ -1,5 +1,5 @@
-import Queue from '../../Structure/queue/queue'
-import { TreeNode } from '../../Structure/tree/tree'
+import { Queue } from '../../Structure'
+import { TreeNode } from '../../Structure'
 
 // 广度优先遍历树的方法
 type Iterator<T> = (item: TreeNode<T>) => void

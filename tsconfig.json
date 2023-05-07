@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "target": "es2017",
-    "lib": ["ES2015", "DOM"]
+    "lib": ["ES2015", "DOM"],
+    "moduleResolution": "node"
   },
   "baseUrl": "."
 }

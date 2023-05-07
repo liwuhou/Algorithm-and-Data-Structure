@@ -4,7 +4,7 @@ export interface TreeNode<T> {
   right?: TreeNode<T>
 }
 
-export default class Tree<T> implements TreeNode<T> {
+export class Tree<T> implements TreeNode<T> {
   public value: T
   public left: TreeNode<T>
   public right: TreeNode<T>

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "jest ./src",
+    "test": "jest",
     "leetcode": "jest ./src/Leetcode",
     "structure": "jest ./src/Structure",
     "algorithm": "jest ./src/Algorithm",
@@ -16,7 +16,7 @@
   "keywords": [
     "algorithm"
   ],
-  "author": "hugewilliam",
+  "author": "liwuhou",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/hugewilliam/Algorithm-and-Data-Structure/issues"
