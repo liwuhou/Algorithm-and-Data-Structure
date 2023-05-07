@@ -3,6 +3,5 @@ coverage
 dist
 
 .DS_Store
-package-lock.json
 .history
 .vscode

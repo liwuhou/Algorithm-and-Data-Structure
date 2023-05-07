@@ -7,7 +7,7 @@
     "leetcode": "jest ./src/Leetcode",
     "structure": "jest ./src/Structure",
     "algorithm": "jest ./src/Algorithm",
-    "preinstall": "npx pm-keeper yarn"
+    "preinstall": "npx pm-keeper pnpm"
   },
   "repository": {
     "type": "git",

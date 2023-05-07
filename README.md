@@ -6,5 +6,5 @@
 ## Getting Started
 
 ```bash
-$ yarn && yarn test
+$ pnpm i && pnpm run test
 ```
