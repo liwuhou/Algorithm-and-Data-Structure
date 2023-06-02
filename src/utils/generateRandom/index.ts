@@ -4,4 +4,4 @@ export const generateRandom = (low = 0, high = 1) => {
 }
 
 export const generateRandomGroup = (count = 100, low = undefined, high = undefined) =>
-  Array.from(new Array(count), _ => generateRandom(low, high))
+  Array.from({length: count}, _ => generateRandom(low, high))
