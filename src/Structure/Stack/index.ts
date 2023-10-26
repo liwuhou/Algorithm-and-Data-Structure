@@ -3,6 +3,7 @@ export interface IStack<T = any> {
   push: (value: T) => void
   pop: () => T | void
   clear: () => void
+  peek: () => T | void
 }
 
 export class Stack<T> implements IStack<T> {
